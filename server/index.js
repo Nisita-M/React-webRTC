@@ -1,3 +1,23 @@
+const express = require("express");
+const path = require("path");
+const app = express();
+
+// Serve React build
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+// Socket.IO setup
+const { Server } = require("socket.io");
+const PORT = process.env.PORT || 8000;
+const io = new Server(app.listen(PORT, () => console.log(`Server running on port ${PORT}`)), {
+  cors: true,
+});
+
+// ... your existing Socket.IO logic ...
+
 const { Server } = require("socket.io");
 
 const PORT = process.env.PORT || 8000; // 8000 is fallback for local testing

@@ -1,0 +1,31 @@
+{
+  "name": "react-webrtc-project",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "scripts": {
+    "client-install": "cd client && npm install",
+    "client-build": "cd client && npm run build",
+    "start-server": "node server/index.js",
+    "start": "npm run client-install && npm run client-build && npm run start-server"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nisita-M/React-webRTC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nisita-M/React-webRTC/issues"
+  },
+  "homepage": "https://github.com/Nisita-M/React-webRTC#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
+
